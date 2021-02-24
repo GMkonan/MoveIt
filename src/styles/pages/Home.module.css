@@ -1,0 +1,17 @@
+.container {
+    height: 100vh; /* usa o vh (viewport height) para ocupar toda a altura */
+    max-width: 992px;
+    margin: 0 auto;
+    padding: 2.5rem 2rem;
+
+    display:flex;
+    flex-direction: column; /* os proximos componentes serao todos embaixo da barra, por isso direcao column */
+}
+
+.container section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*2 colunas com um tamanho igual */
+    gap: 6.25rem;
+    align-content: center;
+}
