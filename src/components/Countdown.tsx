@@ -1,51 +1,28 @@
-import { useState, useEffect, useContext } from 'react';
-import { ChallengesContext } from '../contexts/ChallengesContext';
+import { useContext } from 'react';
+import { CountdownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/Countdown.module.css';
 
-let countdownTimeout: NodeJS.Timeout;
-
 export function Countdown() {
-    const { startNewChallenge } = useContext(ChallengesContext);
+    const { minutes,
+        seconds,
+        hasFinished,
+        isActive,
+        resetCountdown,
+        startCountdown } = useContext(CountdownContext);
 
-    const [time, setTime] = useState(0.1 * 60); //25 minutos em segundos
-    const [isActive, setIsActive] = useState(false); // se countdown esta ativo ou n
-    const [hasFinished, setHasFinished] = useState(false);
-
-    const minutes = Math.floor(time / 60); //retorna valor arredondado para baixo
-    const seconds = time % 60;
 
     // 25 -> '25' split -> ['2', '5']
     /**
      * o padStart chega se o string(minutes) tem 2 caracteres, se n tiver
      * ele vai no comeco (esquerda) e preenche com o numero 0
      */
-    //desestruturacao
+    //desestruturacao, aqui estamos apenas formatando para mostrar na aplicacao
+    //entao isso esta sendo usado para mexer em como a interface eh vista,
+    //e n como aplicacao funciona, ou seja, n eh uma regra de negocio
+    //como os dados sao visualizados eh uma regra especifica desse componente,
+    //q n vai ser usado em mais lugar nenhum, por isso n foi botado no context
     const [minuteLeft, minuteRight] = String(minutes).padStart(2, '0').split('');
     const [secondLeft, secondRight] = String(seconds).padStart(2, '0').split('');
-
-    const startCountdown = () => {
-        setIsActive(true);
-    }
-
-    const resetCountdown = () => {
-        clearTimeout(countdownTimeout);
-        setIsActive(false);
-        setTime(0.1 * 60);
-    }
-
-    useEffect(() => {
-        if (isActive && time > 0) {
-            countdownTimeout = setTimeout(() => {
-                setTime(time - 1);
-            }, 1000);
-        } else if (isActive && time === 0) {
-            setHasFinished(true);
-            setIsActive(false);
-            startNewChallenge()
-        }
-    }, [isActive, time]) /** esse array mantem as dependencias q irao ativar o efeito,se oq
-                        * foi passado no array mudar algumra hora o q esta no useEffect eh ativado
-                        */
 
     return (
         <div>

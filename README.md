@@ -58,5 +58,16 @@ interface ChallengesContextData {
 ```
 
 ### Principal parte da 3 aula, CONTEXTOS EM REACT
+
+o react roda por tras algo chamado "react fast refresh" onde o codigo pode ser alterado sem ter perdido o estado atual da aplicacao
+
+como o countdownProvider depende do ChallengesProvider 
+(usa ele la dentro com o useContext, eh so ir la olhar) 
+ele precisa ficar dentro
+do challengesProvider, senao ele n vai funcionar
+porem, ele n vai ser usado em varias telas, entao n precisamos botar ele
+no _app, podemos chamar ele direto na tela em q ele vai ser chamado, no caso a Home (index)
+e podemos botar ele por volta de onde ele eh necessitado, no caso botamos ele em volta da section
+
 #### Links interessantes:
 https://stackoverflow.com/questions/51040669/next-js-use-of-app-js-and-document-js
