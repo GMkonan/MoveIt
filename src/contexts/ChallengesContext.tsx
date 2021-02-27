@@ -1,5 +1,7 @@
 import { createContext, useState, ReactNode, useEffect } from 'react';
 import challenges from '../../challenges.json';
+import Cookies from 'js-cookie';
+import { LevelUpModal } from '../components/LevelUpModal';
 
 interface Challenge {
   type: 'body' | 'eye';
@@ -18,23 +20,31 @@ interface ChallengesContextData {
   startNewChallenge: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
+  closeLevelUpModal: () => void;
 }
 
 //boas praticas, dando um tipo para children
 interface ChallengesProviderProps {
   children: ReactNode; //quando o filho de um componente tambem eh um componente podemos usar o reactnode
-}                        //o reactNode aceita qualquer elemento filho como children (ex: texto, tag html, componente etc)
+  level: number;       //o reactNode aceita qualquer elemento filho como children (ex: texto, tag html, componente etc)
+  currentExperience: number;
+  challengesCompleted: number;
+}                    
 
 //define q esse contexto segue o formato da interface passada
 export const ChallengesContext = createContext({} as ChallengesContextData);
 
-export function ChallengesProvider({ children }: ChallengesProviderProps) {
-  const [level, setLevel] = useState(1);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challengesCompleted, setChallengesCompleted] = useState(0);
+export function ChallengesProvider({ 
+  children, 
+  ...rest //junta tudo q foi passado q n eh o children podendo ser acessado pelo . como feito abaixo
+  }:
+  ChallengesProviderProps) {         //o ?? significa "se o rest.level n existir, use o 1"
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(rest.currentExperience ?? 0);
+  const [challengesCompleted, setChallengesCompleted] = useState(rest.challengesCompleted ?? 0);
 
   const [activeChallenge, setActiveChallenge] = useState(null)
-
+  const [isLevelUpModalOpen, setIsLevelUpModalOpen] = useState(false);
   /* o 4 eh o fator q define se sera mais facil ou mais dificil se for um numero menor ou maior */
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2)
   //calculo de xp usado em rpgs (interessante)
@@ -47,8 +57,20 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
     Notification.requestPermission()
   }, []) //side effect
 
+  useEffect(() => {
+      Cookies.set('level', String(level));
+      Cookies.set('currentExperience', String(currentExperience));
+      Cookies.set('challengesCompleted', String(challengesCompleted));
+  }, [level, currentExperience, challengesCompleted])
+
+  //como aqui q ele upa eh aqui q devemos botar o modal
   const levelUp = () => {
     setLevel(level + 1);
+    setIsLevelUpModalOpen(true);
+  }
+
+  const closeLevelUpModal = () => {
+    setIsLevelUpModalOpen(false);
   }
 
   const startNewChallenge = () => {
@@ -100,9 +122,12 @@ export function ChallengesProvider({ children }: ChallengesProviderProps) {
       activeChallenge,
       resetChallenge,
       experienceToNextLevel,
-      completeChallenge
+      completeChallenge,
+      closeLevelUpModal
     }}>
       {children}
+
+      { isLevelUpModalOpen && <LevelUpModal /> /* usando && para ser um if sem o else */}  
     </ChallengesContext.Provider>
   )
 }

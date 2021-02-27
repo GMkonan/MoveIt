@@ -1,4 +1,3 @@
-import { ChallengesProvider } from '../contexts/ChallengesContext';
 import '../styles/global.css';
 
 
@@ -6,9 +5,7 @@ import '../styles/global.css';
 // tudo no app esta recebendo um contexto igual entao todos podem se comunicar
 function MyApp({ Component, pageProps }) {
   return (
-    <ChallengesProvider>
       <Component {...pageProps} />
-    </ChallengesProvider>
   )
 }
 
