@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 6rem;
+    height: 100%;
+    background: var(--white);
+}
+
+.icons {
+    width: 3rem;
+    height: 3rem;
+
+    margin: 8px 0 8px 0;
+
+    color: var(--blue);
+
+    transition: color 0.2s;
+}
+
+.icons:hover {
+    cursor: pointer;
+    color: var(--blue-dark);
+}
+
+.wrapper {
+    margin: auto; /* center horizontal */
+    width: 50%; /* center vertical */
+}
