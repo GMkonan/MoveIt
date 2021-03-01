@@ -1,33 +1,43 @@
 .container {
     display: flex;
     flex-direction: column;
-
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    width: 6rem;
+    
+    position: fixed;
+    justify-content: space-between;
+    align-items: center;
+    
+    padding: 2rem;
     height: 100%;
     background: var(--white);
 }
 
-.icons {
-    width: 3rem;
-    height: 3rem;
+.container ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
 
-    margin: 8px 0 8px 0;
+.container ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
+.container ul li + li {
+    margin-top: 2.5rem;
+}
+
+.container div {
+    cursor: pointer;
+}
+
+.iconsColor {
     color: var(--blue);
 
     transition: color 0.2s;
 }
 
-.icons:hover {
-    cursor: pointer;
+.iconsColor:hover {
     color: var(--blue-dark);
-}
-
-.wrapper {
-    margin: auto; /* center horizontal */
-    width: 50%; /* center vertical */
 }

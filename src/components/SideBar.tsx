@@ -1,5 +1,5 @@
 import styles from '../styles/components/SideBar.module.css'
-import { BiHomeAlt, BiMedal, BiSun, BiMoon } from 'react-icons/bi';
+import { BiHomeAlt, BiMedal, BiSun, BiMoon, BiCog } from 'react-icons/bi';
 
 import useDarkMode from 'use-dark-mode';
 
@@ -9,16 +9,23 @@ export default function SideBar() {
 
     return (
         <div className={styles.container}>
-            <div className={styles.wrapper}>
-            <BiHomeAlt className={styles.icons}/>
-            <BiMedal className={styles.icons}/>
-            <div
-            onClick={darkMode.toggle}>
-                {darkMode.value ? 
-                <BiSun className={styles.icons}/> 
-                : <BiMoon className={styles.icons}/>}
-            </div>
-            </div>
+            <img src="logo.svg" />
+                <ul>
+                    <li>
+                    <BiHomeAlt size={42} className={styles.iconsColor}/>
+                    </li>
+                    <li>
+                    <BiMedal size={42} className={styles.iconsColor} />
+                    </li>
+                    <li onClick={darkMode.toggle}>
+                    {darkMode.value ?
+                        <BiSun size={42} className={styles.iconsColor} />
+                        : <BiMoon size={42} className={styles.iconsColor} />}
+                    </li>
+                </ul>
+                <div>
+                <BiCog size={42} className={styles.iconsColor} />
+                </div>
         </div>
     )
 }

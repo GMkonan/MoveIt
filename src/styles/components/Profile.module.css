@@ -25,3 +25,17 @@
 .profileContainer div p img {
     margin-right: 0.5rem;
 }
+
+.logOut {
+    position: relative;
+    top: 20px;
+    left: 150px;
+    color: var(--black);
+
+    transition: color 0.2s;
+}
+.logOut:hover {
+    cursor: pointer;
+
+    color: var(--red);
+}
