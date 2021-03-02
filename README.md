@@ -30,7 +30,7 @@ This app was made during the NLW (Next Level Week) ,a one week event for Brazili
 </p>
 
 <p align="center">
-  <img src="/moveit.png">
+  <img src="/public/moveit.png">
 </p>
 
 ## :information_source: Description
