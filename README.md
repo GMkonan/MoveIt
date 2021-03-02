@@ -1,5 +1,5 @@
 <h1 align="center">
-App Name
+MoveIt
 </h1>
 <p align="center">
 This app was made during the NLW (Next Level Week) ,a one week event for Brazilian Developers, this repository contains my version of the application with new functionalities.
@@ -29,9 +29,9 @@ This app was made during the NLW (Next Level Week) ,a one week event for Brazili
   </a>
 </p>
 
-## Video/Gifs/Screenshots
-
-
+<p align="center">
+  <img src="moveit.png">
+</p>
 
 ## :information_source: Description
 Move.it is a simple but stylish application made to help people use the Pomodoro Technique. You
