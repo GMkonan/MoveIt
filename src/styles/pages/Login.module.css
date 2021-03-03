@@ -1,0 +1,38 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    background: var(--blue);
+    color: var(--white);
+  
+    display: flex;
+    align-items: center;
+}
+
+.loginPanel {
+    margin: auto;
+}
+
+.loginPanel h1 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.loginPanel button {
+    width: 100%;
+    height: 5rem;
+
+    margin-top: 2rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 5px;
+
+    background: var(--green);
+    color: var(--white);
+
+    font-size: 1.25rem;
+    font-weight: 600;
+}

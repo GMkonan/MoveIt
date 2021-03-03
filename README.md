@@ -46,7 +46,8 @@ can up a level by completing tasks which adds a game feeling to the app.
 ### 📝 Todolist
 - [x] Dark theme.
 - [x] Good documentation.
-- [ ] Login with github and google.
+- [x] Login with github and google.
+- [x] Config button and modal.
 - [ ] Twitter share.
 - [ ] Leaderboard.
 ## 🚀 Getting started

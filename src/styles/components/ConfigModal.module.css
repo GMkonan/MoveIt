@@ -22,23 +22,9 @@
     position: relative; /*botao de fechar vai ter position absolute entao o container vai ter position relative */
 }
 
-.container header {
-    font-size: 8.75rem;
-    font-weight: 600;
-    color: var(--blue);
-    background: url('/icons/levelup.svg') no-repeat center;
-    background-size: contain;
-}
-
 .container strong {
-    font-size: 2.25rem;
+    font-size: 1.2rem;
     color: var(--title);
-}
-
-.container p {
-    font-size: 1.25rem;
-    color: var(--text);
-    margin-top: 0.25rem;
 }
 
 .container button {
@@ -49,4 +35,13 @@
     border: 0;
     font-size: 0px; /* font size 0 para deixar o outline do botao mais quadrado e bonito, usar apenas 
                     com botao so com icone */
+}
+
+.container input {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    text-decoration-style: none;
+    background: var(--background);
+    color: var(--text);
 }
