@@ -48,8 +48,7 @@ can up a level by completing tasks which adds a game feeling to the app.
 - [x] Good documentation.
 - [x] Login with github and google.
 - [x] Config button and modal.
-- [ ] Twitter share.
-- [ ] Leaderboard.
+
 ## 🚀 Getting started
 
 You need to have **Git** and **yarn** already installed in your machine

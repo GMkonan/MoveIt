@@ -13,7 +13,7 @@ export function Profile() {
             {session && <img src={session.user.image} alt={session.user.name} />}
             <div>
                 {session && <strong>{session.user.name}</strong>}
-                <BiLogOut size={40} onClick={() => signOut({callbackUrl: 'http://localhost:3000'})} className={styles.logOut}/>
+                <BiLogOut size={40} onClick={() => signOut({callbackUrl: 'https://moveit-alpha-lovat.vercel.app'})} className={styles.logOut}/>
                 <p>
                     {/* referenciando pasta icons diretamente pq esta na pasta public */}
                     <img src="icons/level.svg" alt="Level" /> 

@@ -30,9 +30,9 @@ export default function SideBar() {
                     <li>
                     <BiHomeAlt size={42} className={styles.iconsColor}/>
                     </li>
-                    <li>
+                    {/*<li>
                     <BiMedal size={42} className={styles.iconsColor} />
-                    </li>
+                    </li>*/}
                     <li>
                     {darkMode.value &&  loaded ?
                         <BiSun size={42} className={styles.iconsColor} onClick={darkMode.disable}/>

@@ -12,8 +12,8 @@ export function ExperienceBar() {
         <header className={styles.experienceBar}>
             <span>0 xp</span>
             <div>                   {/*aqui usamos o ?? para usar o 0 caso ainda n existamo cookies */}
-                <div style={{width: `${0 ?? percentToNextLevel}%`}}/> {/* Sera inline pois n sera um estilo fixo (progress bar) */}
-                <span className={styles.currentExperience} style={{ left: `${0 ?? percentToNextLevel}%` }}>
+                <div style={{width: `${percentToNextLevel ? percentToNextLevel : 0}%`}}/> {/* Sera inline pois n sera um estilo fixo (progress bar) */}
+                <span className={styles.currentExperience} style={{ left: `${percentToNextLevel ? percentToNextLevel : 0}%` }}>
                     {currentExperience} xp
                 </span>
             </div>                             

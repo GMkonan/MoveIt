@@ -35,7 +35,7 @@
     color: var(--title);
 }
 
-.container p {
+.container > p {
     font-size: 1.25rem;
     color: var(--text);
     margin-top: 0.25rem;

@@ -35,9 +35,11 @@
 .iconsColor {
     color: var(--blue);
 
-    transition: color 0.2s;
+    /*transition: color 0.2s; */
 }
 
+/*
 .iconsColor:hover {
     color: var(--blue-dark);
 }
+*/
