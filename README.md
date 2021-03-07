@@ -63,6 +63,15 @@ cd MoveIt
 # Install dependencies
 yarn
 ```
+
+### env vars example
+```env
+GITHUB_ID=<your github app ID here>
+GITHUB_SECRET=<Your github auth secret here>
+GOOGLE_ID=<your google app ID here>
+GOOGLE_SECRET=<Your google auth secret here>
+NEXTAUTH_URL=<Your URL here>
+```
 ### ⚙ Executing
 ```bash
 # Executing is really simple
@@ -75,20 +84,3 @@ yarn dev
 - [GMkonan](https://www.linkedin.com/in/gmkonan/)
 ### License
 Distributed under the MIT License. See [LICENSE](https://opensource.org/licenses/MIT) for more information.
-
-## Levando a aplicacao para o proximo nivel
--  Fazer uma documentacao legal (fazer um gif ou video "acho q vou fazer video dessa vez") lista as tecnologias q foram utilizadas, ensina como roda a aplicacao na maquina de alguem q baixar o projeto, explica logistica, pra q serve etc
-- Deixar responsivo
-- adicionar funcionalidade de PWA (pesquisar Next PWA)
-- criar um tema dark
-
-### funcionalidades a mais para o proximo nivel
-- fazer uma forma de logar com o github (pesquisar Oauth github ou Ouath github next) servless com nextjs na rocketSeat (posso pesquisar dps la no canal deles)
-- fazer um ranking 
-- compartilhar no twitter o seu level
-
-### Minhas ideias para o proximo nivel
-- uma ideia eh vc poder usar logado para poder entrar no ranking e deslogado se vc n quiser o ranking
-- outra ideia, um icone de config no sidebar para a pessoa poder definir o tempo do countdown
-### 📝 Todolist
-- [ ] 
